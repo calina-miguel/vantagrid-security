@@ -1,0 +1,95 @@
+.workspace-nav-panel {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.workspace-nav-toggle,
+.workspace-nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .app-sidebar {
+    position: fixed;
+    z-index: 30;
+    right: max(18px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    width: auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  .workspace-nav-toggle {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin-left: auto;
+    border: 1px solid #b9d6b7;
+    border-radius: 18px;
+    background: #204c36;
+    color: white;
+    box-shadow: 0 12px 32px #102b1e55;
+    font-size: 25px;
+    line-height: 1;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .workspace-nav-toggle:focus-visible,
+  .workspace-nav-panel .nav-item:focus-visible {
+    outline: 3px solid #aad98c;
+    outline-offset: 3px;
+  }
+
+  .workspace-nav-backdrop {
+    display: block;
+    position: fixed;
+    z-index: 29;
+    inset: 0;
+    width: 100%;
+    border: 0;
+    background: #1027188c;
+  }
+
+  .workspace-nav-panel {
+    position: absolute;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    width: min(320px, calc(100vw - 36px));
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px 16px;
+    border: 1px solid #416b4e;
+    border-radius: 20px;
+    background: #1d382a;
+    box-shadow: 0 24px 60px #102b1e66;
+  }
+
+  .workspace-nav-panel:not(.open) {
+    display: none;
+  }
+
+  .app-sidebar .workspace-nav-panel nav {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .app-sidebar .workspace-nav-panel .side-caption {
+    display: block;
+  }
+
+  .app-sidebar .workspace-nav-panel .sidebar-foot {
+    display: block;
+    margin-top: 22px;
+  }
+
+  .workspace-content {
+    padding-bottom: 100px;
+  }
+}

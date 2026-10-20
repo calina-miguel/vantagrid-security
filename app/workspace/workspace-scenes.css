@@ -1,0 +1,236 @@
+.workspace-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid #d9e6d8;
+  border-radius: 999px;
+  padding: 4px 11px 4px 5px;
+  background: #f4f8ef;
+  color: #234c35;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #29654a, #9fca78);
+  color: white;
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: inset 0 1px 1px #ffffff77;
+}
+
+.profile-avatar.large {
+  width: 52px;
+  height: 52px;
+  font-size: 23px;
+}
+
+.profile-dismiss {
+  position: fixed;
+  z-index: 19;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+}
+
+.profile-menu {
+  position: absolute;
+  z-index: 21;
+  top: 76px;
+  right: 24px;
+  width: min(330px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid #d7e4d2;
+  border-radius: 22px;
+  padding: 10px;
+  background: #fbfdf8;
+  box-shadow: 0 28px 65px #173b2a35;
+  transform-origin: top right;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px 18px;
+  border-bottom: 1px solid #dce8d8;
+}
+
+.profile-identity div {
+  min-width: 0;
+}
+
+.profile-identity strong,
+.profile-identity small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-identity strong { font-size: 15px; }
+.profile-identity small { margin-top: 3px; color: #67806b; font-size: 11px; }
+
+.profile-menu > button,
+.profile-menu > a {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  background: transparent;
+  color: #234b35;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.profile-menu > button:hover,
+.profile-menu > a:hover { background: #e9f2e5; }
+.profile-menu > a:last-child { color: #9b554d; }
+
+.profile-edit { padding: 16px 10px 8px; }
+.profile-edit label { display: grid; gap: 8px; color: #536455; font-size: 12px; font-weight: 800; }
+.profile-edit input { width: 100%; border: 1px solid #cfdccf; border-radius: 9px; padding: 10px; background: white; }
+.profile-edit p { color: #a54139; font-size: 12px; }
+.profile-edit > div { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.profile-edit button { border: 1px solid #c8d8c6; border-radius: 8px; padding: 8px 12px; background: white; color: #275e45; font-size: 12px; font-weight: 800; }
+.profile-edit button[type="submit"] { background: #275e45; color: white; }
+
+.mobile-section-status { display: none; }
+
+@media (max-width: 650px) {
+  .app-shell { min-height: 100dvh; }
+  .workspace-scene { position: relative; min-height: 100dvh; isolation: isolate; overflow-x: clip; }
+  .workspace-scene::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    inset: -15%;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 16%, #c9dfa773 0 12%, transparent 38%),
+      radial-gradient(circle at 88% 75%, #8dbda354 0 14%, transparent 40%),
+      repeating-linear-gradient(28deg, transparent 0 19px, #477b4e0c 20px 21px),
+      repeating-linear-gradient(118deg, transparent 0 48px, #264f3d0a 49px 50px),
+      #f7f9f4;
+    transform: translate3d(0, calc(var(--scene-index) * -12px), 0) scale(1.12);
+    transition: transform 1.2s cubic-bezier(.18,.8,.2,1);
+  }
+
+  .workspace-top {
+    position: relative;
+    z-index: 20;
+    height: auto;
+    min-height: 96px;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #fbfdf8e8;
+    backdrop-filter: blur(18px);
+  }
+
+  .workspace-top > .eyebrow { width: 100%; font-size: 10px; }
+  .workspace-top-actions { justify-content: space-between; width: 100%; gap: 8px; }
+  .workspace-top label { min-width: 0; }
+  .workspace-top select { max-width: 142px; }
+  .profile-trigger { max-width: 158px; }
+  .profile-menu { position: fixed; top: 104px; right: 16px; }
+
+  .mobile-section-status {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 6px 15px;
+    margin: 22px 16px 0;
+    border: 1px solid #d2e1ce;
+    border-radius: 18px;
+    padding: 17px 18px;
+    background: #ffffffca;
+    box-shadow: 0 15px 35px #2a57311c;
+    backdrop-filter: blur(12px);
+    color: #244934;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .section-counter { color: #33724d; font-family: Manrope, sans-serif; font-size: 24px; letter-spacing: -.08em; }
+  .section-counter i { color: #9ab89b; font-size: 13px; font-style: normal; }
+  .section-swipe-hint { grid-column: 1 / -1; color: #718273; font-size: 11px; font-weight: 600; }
+  .section-swipe-hint b { color: #417950; font-size: 17px; }
+  .section-controls { grid-column: 1 / -1; display: flex; gap: 8px; }
+  .section-controls button { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #cbdcc8; border-radius: 10px; background: #f3f8ef; color: #2c6746; font-size: 20px; font-weight: 800; }
+  .section-controls button:disabled { opacity: .35; }
+  .section-motion-button { grid-column: 1 / -1; width: max-content; border: 1px solid #b9d6b7; border-radius: 999px; padding: 9px 13px; background: #204c36; color: white; font-size: 11px; font-weight: 800; }
+  .section-track { grid-column: 1 / -1; height: 4px; overflow: hidden; border-radius: 99px; background: #dce9d6; }
+  .section-track > span { display: block; height: 100%; border-radius: inherit; background: #397f55; transition: width .6s cubic-bezier(.2,.85,.2,1); }
+
+  .workspace-scene .workspace-content { position: relative; z-index: 1; min-height: calc(100dvh - 210px); padding-top: 32px; }
+  .workspace-scene .page-heading { border-radius: 20px; padding: 20px; background: #ffffffa3; box-shadow: 0 12px 32px #1d4b2920; backdrop-filter: blur(7px); }
+  .workspace-scene .page-heading h1 { font-size: clamp(32px, 9vw, 48px); }
+  .workspace-scene .overview-card,
+  .workspace-scene .record-card,
+  .workspace-scene .empty-state { box-shadow: 0 14px 30px #24532f18; }
+}
+
+@media (max-width: 650px) and (prefers-reduced-motion: no-preference) {
+  @keyframes section-lock-next {
+    0% { opacity: 0; transform: translate3d(0, 38vh, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes section-lock-previous {
+    0% { opacity: 0; transform: translate3d(0, -38vh, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes profile-pop {
+    0% { opacity: 0; transform: translate3d(0, -24px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .scene-next { animation: section-lock-next .85s cubic-bezier(.15,.8,.22,1) both; }
+  .scene-previous { animation: section-lock-previous .85s cubic-bezier(.15,.8,.22,1) both; }
+  .profile-menu { animation: profile-pop .55s cubic-bezier(.16,1,.3,1) both; }
+  .profile-menu > button,
+  .profile-menu > a { animation: profile-pop .5s cubic-bezier(.16,1,.3,1) both; }
+  .profile-menu > button:nth-of-type(2), .profile-menu > a:nth-of-type(1) { animation-delay: .07s; }
+  .profile-menu > a:nth-of-type(2) { animation-delay: .14s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-scene::before { transition: none; }
+  .workspace-motion-opt-in .workspace-scene::before { transition: transform 1.2s cubic-bezier(.18,.8,.2,1); }
+  @keyframes section-lock-next {
+    0% { opacity: 0; transform: translate3d(0, 38vh, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes section-lock-previous {
+    0% { opacity: 0; transform: translate3d(0, -38vh, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes profile-pop {
+    0% { opacity: 0; transform: translate3d(0, -24px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .section-track > span { transition: none; }
+  .scene-arrive, .profile-menu, .profile-menu > button, .profile-menu > a { animation: none; }
+  .workspace-motion-opt-in .scene-next { animation: section-lock-next .85s cubic-bezier(.15,.8,.22,1) both; animation-duration: .85s !important; }
+  .workspace-motion-opt-in .scene-previous { animation: section-lock-previous .85s cubic-bezier(.15,.8,.22,1) both; animation-duration: .85s !important; }
+  .workspace-motion-opt-in .profile-menu { animation: profile-pop .55s cubic-bezier(.16,1,.3,1) both; animation-duration: .55s !important; }
+}

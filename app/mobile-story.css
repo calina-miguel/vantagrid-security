@@ -1,0 +1,128 @@
+/* Scroll scenes stay on the compositor; layout and document scrolling remain native. */
+.marketing {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.motion-choice {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-choice {
+    display: block;
+  }
+}
+
+.marketing.scroll-motion-ready [data-scroll-motion] {
+  transform: translate3d(var(--scroll-x, 0px), var(--scroll-y, 0px), 0)
+    rotate(var(--scroll-rotate, 0deg)) scale(var(--scroll-scale, 1));
+}
+
+@media (min-width: 651px) and (max-width: 1024px) {
+  #features .feature-layout {
+    min-height: 115vh;
+    align-items: start;
+  }
+
+  #features .feature-sticky {
+    position: sticky !important;
+    top: 7vh !important;
+    align-self: start;
+  }
+
+  #features .feature-list > div {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    overflow: clip;
+  }
+
+  .hero-visual {
+    transform-origin: 70% 60%;
+  }
+
+  .marketing.scroll-motion-ready .hero-visual .visual-panel {
+    animation: none;
+    transform: rotate(-3deg);
+  }
+
+  #how-it-works {
+    position: relative;
+    isolation: isolate;
+  }
+
+  #how-it-works .section-intro {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding: 18px 0 20px;
+    background: var(--cream);
+    box-shadow: 0 16px 22px -22px #193d2c66;
+  }
+
+  #how-it-works .step-grid {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    padding-top: 24px;
+  }
+
+  #how-it-works .step-card {
+    min-height: 300px;
+    transform-origin: center bottom;
+  }
+
+  #features .feature-layout {
+    min-height: 0;
+    gap: 0;
+    align-items: start;
+  }
+
+  #features .feature-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3;
+    align-self: start;
+    padding: 18px 0 20px;
+    background: #edf2e9;
+    box-shadow: 0 16px 22px -22px #193d2c66;
+  }
+
+  #features .feature-list {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  #features .feature-list > div {
+    min-height: 260px;
+    margin: 0;
+    padding: 26px;
+    align-content: start;
+    border: 1px solid #d4e2d0;
+    border-radius: 15px;
+    background: #f9fbf7;
+    box-shadow: 0 12px 35px #244f3314;
+    transform-origin: center bottom;
+  }
+
+  .marketing.scroll-motion-ready #how-it-works .step-card:hover {
+    transform: translate3d(var(--scroll-x, 0px), var(--scroll-y, 0px), 0)
+      rotate(var(--scroll-rotate, 0deg)) scale(var(--scroll-scale, 1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not(.motion-opt-in) .marketing .hero-visual,
+  html:not(.motion-opt-in) .marketing #how-it-works [data-scroll-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}

@@ -1,0 +1,5 @@
+.starter-picker{margin:0 0 18px;padding:13px 15px;border:1px solid #dce7d8;border-radius:9px;background:#f6f9f2;color:#526753;font-size:12px}
+.starter-picker>span{display:block;margin-bottom:9px;font-weight:700}
+.starter-picker>div{display:flex;flex-wrap:wrap;gap:7px}
+.starter-picker button{border:1px solid #cbdcc8;background:#fff;border-radius:999px;padding:7px 10px;color:#275e45;font-size:12px;font-weight:700}
+.starter-picker button:hover,.starter-picker button:focus-visible{background:#eaf3e8;border-color:#6b9974}
