@@ -1,6 +1,0 @@
-.signin-page{min-height:100vh;padding:25px 5vw;background:radial-gradient(circle at 80% 20%,#dcebcf,transparent 36%),#f9faf5}
-.signin-card{width:min(440px,100%);margin:10vh auto 0;padding:36px;border:1px solid #dce7d8;border-radius:20px;background:#fff;box-shadow:0 28px 70px #214b2b19}
-.signin-card h1{font-size:clamp(38px,5vw,54px);margin:12px 0}.signin-card>p{color:#58695b;line-height:1.55}
-.signin-card form{display:grid;gap:16px;margin:26px 0 18px}.signin-card label{display:grid;gap:7px;font-size:13px;font-weight:700;color:#536455}
-.signin-card input{width:100%;border:1px solid #cfdccf;border-radius:9px;padding:13px;background:#fff;color:#17221d}
-.signin-card .button-primary{width:100%;justify-content:center;margin-top:6px}.signin-message{font-size:13px;color:#275e45}

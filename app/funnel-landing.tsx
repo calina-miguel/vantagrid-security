@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 export type FunnelConfig = {
   name: string; monogram: string; eyebrow: string; title: string; body: string;
   accent: string; soft: string; steps: string[]; cta: string; outcome: string;

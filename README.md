@@ -1,15 +1,10 @@
-# Eshme-Commerce
+# VantaGrid
 
-Eshme-Commerce helps aspiring sellers organize the work of launching and operating an online store. It combines sourced niche research, supplier term comparison, product records, channel planning, campaigns, leads, conversations, orders, and subscriber consent in one workspace.
+VantaGrid serves the small-business cybersecurity market with a focused path from first interest to a practical next step.
 
-The public site explains the service and its current pricing. Signed-in records are stored per account with Netlify Identity and Netlify Blobs. Store and social integrations are shown as manual workflows until their platform credentials and approvals are configured. Payment processing is inactive; the Payments area records transactions manually.
+## Run locally
 
-## Development
+Use Node.js 22.13 or newer. Install with `npm ci`, start with `npm run dev`, and validate with `npm run build`.
 
-Requires Node.js 22.13 or newer. Install dependencies with `npm ci` and start a local server with `npm run dev`. The local server uses a development-only seller account and in-memory records. Build with `npm run build`.
+The landing experience is defined in `app/page.tsx` and `app/funnel-landing.tsx`. Brand identity and visual assets are maintained in this repository.
 
-Production hosting uses Netlify. Enable Identity on the Netlify project before inviting sellers; Identity confirms new accounts by email by default. The records API scopes every operation to the authenticated user and stores records in the `seller-records` Blob store. Netlify's free plan has usage limits and may pause access when its monthly allocation is exhausted.
-
-## Current service terms
-
-The first 30 days are free. Subscription pricing is coming soon. Access remains free until billing is enabled, and no payment method is required. External stores, marketing tools, and payment providers may have their own fees.
