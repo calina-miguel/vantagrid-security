@@ -1,7 +1,12 @@
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif}
+html.motion-ready .reveal:not(.is-visible){opacity:0;translate:0 28px}
+.reveal{transition:opacity 850ms ease,translate 850ms ease;transition-delay:var(--reveal-delay,0ms)}
+.reveal.is-visible{opacity:1;translate:0 0}
+.parallax{will-change:transform;translate:0 var(--parallax-y,0px)}
 button,input,textarea,select{font:inherit}
 a{color:inherit}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.reveal,.parallax{opacity:1!important;translate:none!important;will-change:auto!important}}
 
