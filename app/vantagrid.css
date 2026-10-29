@@ -12,3 +12,23 @@
 .vanta-page{font-family:Bahnschrift,'Arial Narrow',Arial,sans-serif}
 .vanta-page :is(h1,h2,h3){font-family:inherit;font-stretch:condensed;font-weight:600;letter-spacing:-.035em}
 .vanta-page :is(.vanta-nav-label,.vanta-footer,.console-aside,.console-path,.console-command,.console-row>span,.console-row>b){font-family:Consolas,monospace}
+
+/* VantaGrid opens on the live-feeling operations console, with the brief below it. */
+.vanta-hero{min-height:0;grid-template-columns:1fr;gap:0;padding-block:52px 70px}
+.vanta-console{grid-row:1;width:min(100%,1020px);margin:0 auto 38px}
+.vanta-copy{grid-row:2;display:grid;grid-template-columns:1fr 1fr;align-items:end;column-gap:35px}
+.vanta-copy .vanta-kicker{grid-column:1/-1}
+.vanta-copy h1{grid-column:1;margin-block:18px 0}
+.vanta-copy>p:not(.vanta-kicker){grid-column:2;grid-row:2;max-width:420px;margin:0 0 18px}
+.vanta-button{grid-column:2;grid-row:3;justify-self:start;margin:0}
+.vanta-hero-foot{grid-column:1;grid-row:3;margin-top:15px}
+.console-content{min-height:300px}
+.console-main{padding-inline:clamp(20px,5vw,60px)}
+.console-row{min-height:52px}
+.vanta-checklist{grid-template-columns:1fr;gap:32px;padding-block:104px}
+.checklist-heading{display:grid;grid-template-columns:1fr 1fr;align-items:end;column-gap:35px}
+.checklist-heading .vanta-kicker{grid-column:1/-1}
+.checklist-heading h2{margin:18px 0 0}
+.checklist-heading>p:last-child{justify-self:end;max-width:355px;margin:0 0 10px}
+.check-item{min-height:100px}
+@media(max-width:850px){.vanta-copy{grid-template-columns:1fr}.vanta-copy .vanta-kicker{grid-column:auto}.vanta-copy h1,.vanta-copy>p:not(.vanta-kicker),.vanta-button,.vanta-hero-foot{grid-column:auto;grid-row:auto}.vanta-copy>p:not(.vanta-kicker){margin:18px 0}.vanta-hero-foot{margin-top:25px}.checklist-heading{grid-template-columns:1fr}.checklist-heading .vanta-kicker{grid-column:auto}.checklist-heading>p:last-child{justify-self:start;margin-top:14px}}
